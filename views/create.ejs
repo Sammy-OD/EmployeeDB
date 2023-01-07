@@ -1,0 +1,63 @@
+<%- include('./partials/usernav') %>
+
+<div id="dashboard-main">
+<div class="container" style="margin: 40px auto;">
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card-panel z-depth-3">
+                <h4 class="indigo-text text-darken-4 center" style="margin-bottom: 20px; text-transform: uppercase;"><i class="<%= icon %>"></i> <%= title %></h4>
+            <form action="/create" method="POST" autocomplete="off">
+                <input type="hidden" name="id" value="<%= typeof employee != 'undefined' ? employee._id : '' %>" required>
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="fullName" type="text" name="fullName" value="<%= typeof employee != 'undefined' ? employee.fullName : '' %>" required>
+                        <label for="fullName">Full Name</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input id="email" type="email" name="email" inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Format: example@example.com" value="<%= typeof employee != 'undefined' ? employee.email : '' %>" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12">
+                        <i class="fa fa-phone-alt prefix"></i>
+                        <input id="phoneNumber" type="text" name="phoneNumber" inputmode="numeric" pattern="[0-9]*" title="Format: 08044444444" value="<%= typeof employee != 'undefined' ? employee.phoneNumber : '' %>" required>
+                        <label for="phoneNumber">Phone Number</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="sex" type="text" name="sex" value="<%= typeof employee != 'undefined' ? employee.sex : '' %>" required>
+                        <label for="sex">Sex</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-building prefix"></i>
+                        <input id="department" type="text" name="department" value="<%= typeof employee != 'undefined' ? employee.department : '' %>">
+                        <label for="department">Department</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <button style="width: 100%;" class="btn waves-effect waves-light indigo darken-4" type="submit">
+                            Submit <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,57 @@
+<%- include('./partials/header') %>
+
+<div class="container" style="margin: 40px auto;">
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card-panel z-depth-3">
+                <h3 class="indigo-text text-darken-4 center" style="margin-bottom: 20px;"><i class="fa fa-user-plus"></i> SIGN UP</h3>
+                <%- include('./partials/messages') %>
+            <form action="/signUp" method="POST" autocomplete="off">
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="firstName" type="text" name="firstName" value="<%= typeof firstName != 'undefined' ? firstName : '' %>" required>
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="lastName" type="text" name="lastName" value="<%= typeof lastName != 'undefined' ? lastName : '' %>" required>
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="input-field col s12">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input id="email" type="email" name="email" inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Format: example@example.com" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-lock prefix"></i>
+                        <input id="password" type="password" name="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-lock prefix"></i>
+                        <input id="confirmPassword" type="password" name="confirmPassword" required>
+                        <label for="confirmPassword">Confirm Password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <button style="width: 100%;" class="btn waves-effect waves-light indigo darken-4" type="submit">
+                            Submit <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

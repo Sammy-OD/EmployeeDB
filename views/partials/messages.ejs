@@ -1,0 +1,37 @@
+<% if (typeof errors != 'undefined') { %>
+    <% errors.forEach((error)=> { %>
+        <div class="row red lighten-4 red-text text-darken-4 alert-box z-depth-1">
+            <div class="col s12">
+                <%= error.msg %>
+            </div>
+            <i class="fa fa-times close-icon" aria-hidden="true"></i>
+        </div>
+    <% }); %>
+<% } %>
+
+<% if (error != '') { %>
+        <div class="row red lighten-4 red-text text-darken-4 alert-box z-depth-1">
+            <div class="col s12">
+                <%= error %>
+            </div>
+            <i class="fa fa-times close-icon" aria-hidden="true"></i>
+        </div>
+<% } %>
+
+<% if (success_msg != '') { %>
+    <div class="row green lighten-4 green-text text-darken-4 alert-box z-depth-1">
+        <div class="col s12">
+            <%= success_msg %>
+        </div>
+        <i class="fa fa-times close-icon" aria-hidden="true"></i>
+    </div>
+<% } %>
+
+<% if (error_msg != '') { %>
+    <div class="row red lighten-4 red-text text-darken-4 alert-box z-depth-1">
+        <div class="col s12">
+            <%= error_msg %>
+        </div>
+        <i class="fa fa-times close-icon" aria-hidden="true"></i>
+    </div>
+<% } %>

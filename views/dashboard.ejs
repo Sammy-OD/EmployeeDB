@@ -1,0 +1,22 @@
+<%- include('./partials/usernav') %>
+
+<div id="dashboard-main">
+    <div class="container">
+        <h3>Welcome, <%= name %></h3><hr>
+
+        <ul class="collection with-header">
+            <li class="collection-header"><h4 style="text-transform: uppercase;">Overview</h4></li>
+            <li class="collection-item flow-text overview-items">Total number of employees: <%= totalEmployee %></li>
+            <li class="collection-item flow-text overview-items">Total number of departments: <%= department.length %></li>
+        </ul>
+
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Number of Employees per Department</h4></li>
+            <% if(typeof department != 'undefined') { %>
+                <% department.forEach(department => { %>
+                    <li class="collection-item flow-text overview-items"><%= department._id %>: <%= department.total %></li>
+                <% }); %>
+            <% } %>
+        </ul>
+    </div>
+</div>

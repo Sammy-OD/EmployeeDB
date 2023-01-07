@@ -1,0 +1,47 @@
+<div class="navbar-fixed">
+    <nav class="indigo darken-4" style="padding-left: 10px;">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="/img/edb-white.png" alt="Logo" style="width: 80px;"></a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="fa fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/admin/signOut"><i class="fa fa-power-off fa-1x"></i> Sign Out</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav indigo darken-4" id="mobile-nav">
+    <li><div class="indigo-text bnn" style="width: 100%; height: 200px;"><div style="width: inherit; height: inherit; background-color: rgba(0, 0, 0, 0.63);"><h3 style="position: absolute; bottom: 0; left: 10px;"><a href="/"><img src="/img/edb-white.png" alt="Logo" style="width: 80px;"></a></h3></div></div></li>
+    <li><a class="white-text" href="/admin/signOut"><i class="fa fa-power-off white-text" style="margin-right: 10px;"></i>Sign Out</a></li>
+</ul>
+
+<div class="container">
+    <h3>Welcome, Admin</h3><hr>
+</div>
+<br>
+
+<div class="container indigo darken-4 white-text" style="overflow-x: auto; margin-bottom: 80px;">
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% if (typeof list != 'undefined') { %>
+                <% list.forEach((user)=> { %>
+                    <tr>
+                        <td><%= user.fullName %></td>
+                        <td><%= user.email %></td>
+                        <td class="right">
+                            <a class="waves-effect waves-light btn-small btn-floating red darken-2 user-btn" href="/admin/delete/<%= user._id %>" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                <% }); %>
+            <% } %>
+        </tbody>
+    </table>
+</div>
